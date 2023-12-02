@@ -11,6 +11,10 @@ const variables = {
   error: '#c40941',
   info: '#3dfff3',
 
+  primary: '#426CFF',
+  'primary-200': '#E3E9FF',
+  'primary-100': '#F5F7FF',
+
   'gray-100': '#94979E',
 
   'red-shadow': '#8264be',
@@ -19,7 +23,6 @@ const variables = {
   'caption-color': '#C1EBED',
   'caption-color1': '#8BF8FF',
   'pagination-number': '#515251',
-  gradient: 'linear-gradient(216deg, #F75BB1 1.04%, #C392DC 45.73%, #008782 100%)',
 
   bg: '#0C0D0E',
   'bg-sub': '#1A2D474D',
@@ -40,9 +43,9 @@ const variables = {
   'radius-xxl': '2.5rem',
   'radius-round': '999px',
 
-  font1: 'Termina Test',
-  font2: 'Neue Haas Grotesk Display Pro',
-  font3: 'Aeonik',
+  font1: 'GT Walsheim Pro',
+  font2: 'Inter',
+  font3: 'Stratumno1',
 
   'weight-xxl': '900',
   'weight-xl': '700',

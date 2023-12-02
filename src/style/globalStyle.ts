@@ -1,13 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 import variables, { desVariables, smVariables, tabVariables } from "./variable";
 import { GV, declearStyleVariables } from "@/utils/style.util";
-import AeonikFont from "@/assets/fonts/aeonik/Aeonik-Regular.otf";
+import GTWalsheimPro from "@/assets/fonts/GTWalsheim/gtwalsheimpro_condensedmedium.otf";
+import stratumno1 from '@/assets/fonts/stratumno1/stratum-no1-2.otf';
 
 const GlobalStyle = createGlobalStyle`
 
 	@font-face {
-		font-family: 'Aeonik';
-		src: url(${AeonikFont}) format('opentype');
+		font-family: 'GT Walsheim Pro';
+		src: url(${GTWalsheimPro}) format('opentype');
+	}
+	@font-face {
+		font-family: 'Stratumno1';
+		src: url(${stratumno1}) format('opentype');
 	}
 	:root {
 		${declearStyleVariables(variables)}
