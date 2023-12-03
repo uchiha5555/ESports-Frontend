@@ -57,7 +57,7 @@ const fields: TableFieldInterface[] = [
     render: (i, v, n) => <CustomFont>{v}</CustomFont>,
     sort: (i: any, v: any) => v,
     description: 'This field is ...',
-    width: '90px',
+    width: '80px',
   },
   {
     key: 'total',

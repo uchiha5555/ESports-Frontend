@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const StatsContainer = styled.div`
     background: ${props => props.theme.gray.ghost};
     width: 100%;
-    max-width: 350px;
+    max-width: 328px;
     padding: 2rem;
 `;
 

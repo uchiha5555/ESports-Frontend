@@ -6,7 +6,7 @@ export const StyledTh = styled.div<{ $width?: string }>`
   display: flex;
   min-width: fit-content;
   ${({ $width }) => ($width ? `width: ${$width};` : ``)}
-  padding: 1rem 1.25rem;
+  padding: 1rem 0.4rem;
   font-size: ${GV('font-size-4')};
   font-family: ${GV('font1')}
 `;
@@ -17,7 +17,7 @@ export const StyledTd = styled.div<{ $align?: string; $width?: string }>`
   overflow: hidden;
   ${({ $align }) => ($align ? `align-items: ${$align};` : ``)}
   ${({ $width }) => ($width ? `width: ${$width};` : ``)}
-  padding: 1rem 1.25rem;
+  padding: 1rem 0.4rem;
 `;
 
 // export const StyledTr = styled.div`
@@ -32,6 +32,7 @@ export const StyledTable = styled.div<{ $gct: string[] }>`
   display: grid;
   grid-template-columns: ${({ $gct }) => $gct.join(' ')};
   grid-row-gap: 0.1rem;
+  grid-column-gap: 0;
   background: ${GV('gray')};
 
   > * {

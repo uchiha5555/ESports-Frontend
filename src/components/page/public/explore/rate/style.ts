@@ -61,6 +61,6 @@ export const Divider = styled.div`
 `;
 
 export const ChartContainer = styled.div`
-    width: 600px;
+    width: 100%;
     height: 400px;
 `

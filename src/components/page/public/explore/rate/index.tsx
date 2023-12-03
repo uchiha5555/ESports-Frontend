@@ -45,7 +45,7 @@ const HitRates = () => {
           $style={{
             fDirection: 'column',
             w: '100%',
-            maxW: '500px',
+            maxW: '450px',
           }}
         >
           <THeader>

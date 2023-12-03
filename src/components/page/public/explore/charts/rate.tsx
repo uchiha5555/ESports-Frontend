@@ -5,11 +5,10 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
-  Legend,
   Cell,
   LabelList,
   ReferenceLine,
+  ResponsiveContainer,
 } from 'recharts';
 
 const data = [
@@ -98,39 +97,40 @@ const RateChart = () => {
   };
 
   return (
-    <BarChart
-      width={1200}
-      height={400}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <XAxis dataKey="name" />
-      <YAxis />
-      <CartesianGrid vertical={false} />
-      <Bar dataKey="value">
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={entry.color} />
-        ))}
-        <LabelList content={<CustomizedLabel />} />
-      </Bar>
-      <ReferenceLine
-        y={20}
-        stroke="white" // Color of the reference line
-        strokeWidth={2} // Width of the reference line
-        label={{
-          position: 'insideBottom', // Position of the label
-          value: ``, // Label text
-          fontSize: 40, // Font size of the label
-          fill: 'black', // Color of the label text
-          dy: 40,
+    <ResponsiveContainer width={'100%'} height={'100%'}>
+      <BarChart
+        data={data}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
         }}
-      />
-    </BarChart>
+      >
+        <XAxis dataKey="name" />
+        <YAxis />
+        <CartesianGrid vertical={false} />
+        <Bar dataKey="value">
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={entry.color} />
+          ))}
+          <LabelList content={<CustomizedLabel />} />
+        </Bar>
+        <ReferenceLine
+          y={20}
+          stroke="white" // Color of the reference line
+          strokeWidth={2} // Width of the reference line
+          label={{
+            position: 'insideTopRight', // Position of the label
+            value: `O/U 20`, // Label text
+            fontSize: 20, // Font size of the label
+            fill: 'white', // Color of the label text
+            dy: 10,
+            dx: 65,
+          }}
+        />
+      </BarChart>
+    </ResponsiveContainer>
   );
 };
 
