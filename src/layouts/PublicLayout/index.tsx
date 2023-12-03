@@ -7,24 +7,23 @@ import { ThemeProvider } from 'styled-components';
 import { PublicLayoutProvider, PublicLayoutProviderInterface } from './context';
 import { initialState, reducer } from './reducer';
 import { darkTheme, lightTheme } from '@/style/theme';
-import { ThemeModeProvider, useThemeMode } from '@/context/ThemeModeContext';
+import { PublicLayoutContainer } from './style';
 
 const PublicLayout = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  const { theme } = useThemeMode();
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   return (
-    <ThemeModeProvider>
-      <ThemeProvider theme={theme ? darkTheme : lightTheme}>
-        <PublicLayoutProvider value={{ ...state, dispatch }}>
-          <Header />
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <PublicLayoutProvider value={{ ...state, dispatch }}>
+        <PublicLayoutContainer>
+          <Header toggle={isDarkMode} toggleTheme={setIsDarkMode} />
           {/* <Sidebar /> */}
           <Main>{children}</Main>
           <Footer />
-        </PublicLayoutProvider>
-      </ThemeProvider>
-    </ThemeModeProvider>
+        </PublicLayoutContainer>
+      </PublicLayoutProvider>
+    </ThemeProvider>
   );
 };
 

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import { GV } from "@/utils/style.util";
 
 export interface InlineTextPropsType {
   color?: string;
@@ -28,7 +29,7 @@ const setStyle = ({
 }: Partial<InlineTextPropsType>) => {
   return `
 		${color ? `color:					var(--${color});` : ``}
-		${size ? `font-size:				${size};` : ``}
+		${size ? `font-size:				${size};` : `${GV('font-size')}`}
 		${weight ? `font-weight:				${weight};` : ``}
 		${mb ? `margin-bottom:			${mb};` : ``}
 		${align ? `text-align:				${align};` : ``}

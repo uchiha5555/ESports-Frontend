@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import variables, { desVariables, smVariables, tabVariables } from "./variable";
 import { GV, declearStyleVariables } from "@/utils/style.util";
-import GTWalsheimPro from "@/assets/fonts/GTWalsheim/gtwalsheimpro_condensedmedium.otf";
+import GTWalsheimPro from "@/assets/fonts/GTWalsheim/GT-Walsheim-Light.otf";
 import stratumno1 from '@/assets/fonts/stratumno1/stratum-no1-2.otf';
 
 const GlobalStyle = createGlobalStyle`

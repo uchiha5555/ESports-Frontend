@@ -1,17 +1,17 @@
-import React from "react";
-import { ContentColor, FooterContainer, FooterWrapper, Line, Logo } from "./style";
-import { Flex, Link, List, ListItem, P, Span } from "@/components/basic";
-import { Icon } from "@/components/custom";
-import { GV } from "@/utils/style.util";
+import React from 'react';
+import { ContentColor, FooterContainer, FooterWrapper, Line, Logo } from './style';
+import { Flex, Link, List, ListItem, P, Span } from '@/components/basic';
+import { Icon } from '@/components/custom';
+import { GV } from '@/utils/style.util';
 
 import LogoImage from '@/assets/img/logo.png';
-import Map from '@/assets/img/sitemap.png'
+import Map from '@/assets/img/sitemap.png';
 
 const Footer = () => {
-    return (
-        <FooterContainer>
-            <FooterWrapper>
-                <Flex
+  return (
+    <FooterContainer>
+      <FooterWrapper>
+        {/* <Flex
                     $style={{
                         fDirection: "column",
                         gap: "2.5rem",
@@ -209,10 +209,10 @@ const Footer = () => {
                             </Flex>
                         </Flex>
                     </Flex>
-                </Flex>
-            </FooterWrapper>
-        </FooterContainer>
-    )
-}
+                </Flex> */}
+      </FooterWrapper>
+    </FooterContainer>
+  );
+};
 
 export default Footer;

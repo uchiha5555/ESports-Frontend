@@ -4,6 +4,12 @@ import { GV } from '@/utils/style.util';
 export const ExploreContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 120px 32px;
-  gap: 80px;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
 `;
+
+export const ExploreWrapper = styled.div`
+  display: flex;
+  gap: 2rem;
+`

@@ -25,7 +25,7 @@ export const InputWrapper = styled.label<{ padding: string }>`
   align-items: center;
   ${({ padding }) => (padding ? `padding: ${padding};` : `padding: 0 0.5rem;`)}
   line-height: 3.5rem;
-  min-height: 2.5rem;
+  min-height: 3rem;
   z-index: 1;
 `;
 
@@ -43,7 +43,7 @@ export const InputBoard = styled.div<{
   border: 1px solid transparent;
   ${({ bg }) => (bg ? `background: ${bg};` : `background: ${GV("input-bg")};`)}
   ${({ radius }) =>
-    radius ? `border-radius: ${radius};` : `border-radius: 0.75rem;`}
+    radius ? `border-radius: ${radius};` : `border-radius: 0;`}
     ${({ border }) => (border ? `border-color: ${border}` : ``)}
     box-shadow: 0px 0px 0px 1px rgba(160, 140, 199, 0.16), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 `;
@@ -56,7 +56,8 @@ export const StyledInput = styled.input`
   background: none;
   border: none;
   outline: none;
-  font-size: ${GV('font-size-4')};
+  font-size: ${GV('font-size-6')};
+  font-family: ${GV('font1')};
 `;
 
 export const StyledTextarea = styled(StyledInput)``;

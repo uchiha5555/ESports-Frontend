@@ -16,6 +16,9 @@ const variables = {
   'primary-100': '#F5F7FF',
 
   'gray-100': '#94979E',
+  'gray-300': '#eeeeee',
+  'gray-500': '#1b1b1b',
+  'white-100': '#ffffff11',
 
   'red-shadow': '#8264be',
   'purple-shadow': '#dc6062',
@@ -53,11 +56,11 @@ const variables = {
   'weight-md': '500',
   'weight-sm': '400',
 
-  'font-size': '16px',
+  'font-size': '1rem',
   'font-size-1': '3rem',
   'font-size-2': '2rem',
-  'font-size-3': '1.25rem',
-  'font-size-4': '1rem',
+  'font-size-3': '1.5rem',
+  'font-size-4': '1.25rem',
   'font-size-5': '0.875rem',
   'font-size-6': '0.75rem',
   'font-size-7': '0.5rem',
