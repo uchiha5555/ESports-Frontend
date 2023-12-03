@@ -17,12 +17,34 @@ export const BreadcrumbContainer = styled.div`
   margin-top: 1.5rem;
   max-width: 1471px;
   width: 100%;
+
+  @media (max-width: 1600px) {
+    padding-left: 20px;
+  }
 `;
 
 export const BreadcrumbWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const MobileBreadcrumb = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: ${GV('font1')};
+  font-size: 0.875rem;
+  color: ${props => props.theme.text};
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `
 
 export const Breadcrumb = styled.div`
@@ -54,9 +76,26 @@ export const PlayerLetter = styled.div`
   opacity: 0.1;
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  @media (max-width: 1320px) {
+    display: none;
+  }
+`
+
 export const UserInfoContainer = styled.div`
+  display: flex;
+  justify-content: center;
   width: 100%;
   z-index: 1;
+  @media (max-width: 1320px) {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    padding: 0 0 2rem;
+  }
 `
 
 export const UserInfo = styled.div`
@@ -66,11 +105,33 @@ export const UserInfo = styled.div`
   padding-left: 2rem;
   padding-right: 2rem;
   width: 100%;
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+    padding: 0;
+  }
+
+  @media (max-width: 400px) {
+    gap: 3rem;
+  }
 `;
 
 export const AvatarContainer = styled.div`
-  width: 430px;
-  height: auto;
+  max-width: 430px;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+
+  @media (max-width: 650px) {
+    width: 180px;
+  }
+
+  @media (max-width: 550px) {
+    width: 120px;
+  }
 `;
 
 export const BackAvatarContainer = styled.div`
@@ -80,6 +141,15 @@ export const BackAvatarContainer = styled.div`
   opacity: 0.1;
   z-index: -1;
   width: auto;
+
+  @media (max-width: 768px) {
+    bottom: 5rem;
+  }
+
+  @media (max-width: 600px) {
+    height: 600px;
+    bottom: 10rem;
+  }
 `
 
 export const FormContainer = styled.div`
@@ -88,15 +158,29 @@ export const FormContainer = styled.div`
   flex: 1;
   gap: 1.5rem;
   padding-top: 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
-export const CustomLetter = styled.div`
+export const CustomName = styled.div`
   font-size: 50px;
   font-family: ${GV('font2')};
   letter-spacing: -1.5px;
   text-transform: uppercase;
   font-weight: 500;
   color: ${props => props.theme.button.text};
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+    font-weight: 900;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+    font-weight: 900;
+  }
 `;
 
 export const LinkLetter = styled.div`
@@ -175,7 +259,6 @@ export const CustomButton = styled.button`
 `;
 
 export const InfoBar = styled.div`
-
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -183,10 +266,62 @@ export const InfoBar = styled.div`
   border-top: 1px solid ${GV('gray')};
   border-bottom: 1px solid ${GV('gray')};
   color: ${props => props.theme.button.text};
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const MobileInfoBar = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MobileInfoItem = styled.div`
+  padding: 0.75rem 0;
+  color: ${props => props.theme.text};
+  font-family: ${GV('font1')};
+  border-top: 1px solid ${props => props.theme.table.main};
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `
 
 export const VerticalBarChartLayout = styled.div`
   width: 70%;
   height: 100%;
 
+  @media (max-width: 1320px) {
+    display: none;
+  }
+`;
+
+export const MobileVerticalBarChartLayout = styled.div`
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  @media (max-width: 1320px) {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    margin: 20px 0px;
+
+    margin-left: -65px;
+  }
+`
+
+export const MobileButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2rem;
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `

@@ -38,6 +38,10 @@ export const THeader = styled.div`
     padding: 9px 72px;
     width: 100%;
     background: ${props => props.theme.table.primary};
+    @media (max-width: 768px) {
+        padding: 9px 10px;
+        gap: 2rem;
+    }
 `;
 
 export const TBody = styled.div`
@@ -48,6 +52,10 @@ export const TBody = styled.div`
     padding: 9px 72px;
     width: 100%;
     background: ${props => props.theme.table.secondary};
+    @media (max-width: 768px) {
+        padding: 9px 10px;
+        gap: 2rem;
+    }
 `;
 
 export const CustomFont = styled.div`
@@ -66,4 +74,8 @@ export const Divider = styled.div`
 export const ChartContainer = styled.div`
     width: 100%;
     height: 400px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `

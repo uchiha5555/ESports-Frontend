@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Flex, P } from '@/components/basic';
+import { Flex, P, Span } from '@/components/basic';
 import { Icon } from '@/components/custom';
 
 import {
@@ -9,12 +9,18 @@ import {
   Breadcrumb,
   BreadcrumbContainer,
   BreadcrumbWrapper,
+  ButtonContainer,
   CustomButton,
-  CustomLetter,
+  CustomName,
   FormContainer,
   HeroContainer,
   InfoBar,
   LinkLetter,
+  MobileBreadcrumb,
+  MobileButtonContainer,
+  MobileInfoBar,
+  MobileInfoItem,
+  MobileVerticalBarChartLayout,
   PlayerLetter,
   Unactived,
   UserInfo,
@@ -26,7 +32,10 @@ import Image from '@/components/basic/img';
 import AvatarImage from '@/assets/img/avatar.png';
 import GameBarComponent from '@/components/page/public/home/gamebar';
 import VerticalBarChart from '@/components/page/public/home/chart';
+import MobileVerticalBarChart from '@/components/page/public/home/chart/mobile';
+
 import ContainerComponent from '@/components/layout/container';
+import { FaArrowLeft } from 'react-icons/fa';
 import { ModeContext } from '@/context';
 
 const Hero = () => {
@@ -41,6 +50,10 @@ const Hero = () => {
           </Breadcrumb>
           <PlayerLetter>PLAYER</PlayerLetter>
         </BreadcrumbWrapper>
+        <MobileBreadcrumb>
+          <FaArrowLeft />
+          <Span>Buddy Hield</Span>
+        </MobileBreadcrumb>
       </BreadcrumbContainer>
       <ContainerComponent>
         <UserInfoContainer>
@@ -60,29 +73,38 @@ const Hero = () => {
                   vAlign: 'center',
                 }}
               >
-                <CustomLetter>Faker</CustomLetter>
-                <Flex
-                  $style={{
-                    vAlign: 'center',
-                    gap: '2rem',
-                  }}
-                >
+                <CustomName>Faker</CustomName>
+                <ButtonContainer>
                   <LinkLetter>View Comprassion (2)</LinkLetter>
                   <CustomButton>
                     <div>Add to Comprassion</div>
                   </CustomButton>
-                </Flex>
+                </ButtonContainer>
               </Flex>
               <InfoBar>
                 <P $style={{ size: '18px' }}>FAKER (MID)</P>
                 <P $style={{ size: '18px' }}>Top 20 (#5)</P>
                 <P $style={{ size: '18px' }}>27 years</P>
               </InfoBar>
+              <MobileInfoBar>
+                <MobileInfoItem>Buddy (Awper)</MobileInfoItem>
+                <MobileInfoItem>Top 20 (#5)</MobileInfoItem>
+                <MobileInfoItem>29 years</MobileInfoItem>
+              </MobileInfoBar>
               <VerticalBarChartLayout>
                 <VerticalBarChart />
               </VerticalBarChartLayout>
             </FormContainer>
           </UserInfo>
+          <MobileVerticalBarChartLayout>
+            <MobileVerticalBarChart />
+          </MobileVerticalBarChartLayout>
+          <MobileButtonContainer>
+            <LinkLetter>View Comprassion (2)</LinkLetter>
+            <CustomButton>
+              <div>Add to Comprassion</div>
+            </CustomButton>
+          </MobileButtonContainer>
         </UserInfoContainer>
       </ContainerComponent>
     </HeroContainer>

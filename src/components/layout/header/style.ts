@@ -25,25 +25,46 @@ export const HeaderWrapper = styled.menu`
   height: 117px;
   padding: 40px 0 32px;
 
-  > div {
-    > :not(:first-child) {
-      @media screen and (max-width: 600px) {
-        display: none;
-      }
-    }
+  @media (max-width: 600px) {
+    display: none;
   }
 
   @media (max-width: 768px) {
-    padding: 0 1rem;
+    padding: 0;
   }
 `;
+
+export const MenuContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  padding: '0.25rem 0 0';
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+`
 
 export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 4rem;
   width: 100%;
   max-width: 500px;
+
+  @media (max-width: 1400px) {
+    display: none;
+  }
+`;
+
+export const MobileHeader = styled.div`
+  align-items: center;
+  justify-content: space-between;
+  height: 117px;
+  padding: 40px 0 32px;
+  display: none;
+
+  @media (max-width: 600px) {
+    display: flex;
+  }
 `
 
 export const MenuItem = styled.div`

@@ -31,7 +31,7 @@ export const StyledTd = styled.div<{ $align?: string; $width?: string }>`
 //   height: 4.5rem;
 // `;
 
-export const StyledTable = styled.div<{ $gct: string[], mode: boolean }>`
+export const StyledTable = styled.div<{ $gct: string[], mode?: string }>`
   display: grid;
   grid-template-columns: ${({ $gct }) => $gct.join(' ')};
   grid-row-gap: 0.1rem;
@@ -49,7 +49,7 @@ export const StyledTable = styled.div<{ $gct: string[], mode: boolean }>`
           (k === 0 ? `` : `,`) + `\n>div:nth-child(${$gct.length * 2}n + ${k + 1})`
       )
       .join('')} {
-      background: ${mode ? '#111111' : '#ffffff'};
+      background: ${mode === 'true' ? '#111111' : '#ffffff'};
     }
   `}
   ${({ $gct, mode }) => `
@@ -59,7 +59,7 @@ export const StyledTable = styled.div<{ $gct: string[], mode: boolean }>`
           (k === 0 ? `` : `,`) + `\n>div:nth-child(${$gct.length * 2}n - ${k})`
       )
       .join('')} {
-        background: ${mode ? '#111111' : '#ffffff'};
+        background: ${mode === 'true' ? '#111111' : '#ffffff'};
     }
   `}
 `;

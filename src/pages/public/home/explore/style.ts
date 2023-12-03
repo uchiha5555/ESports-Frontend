@@ -12,4 +12,9 @@ export const ExploreContainer = styled.div`
 export const ExploreWrapper = styled.div`
   display: flex;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `

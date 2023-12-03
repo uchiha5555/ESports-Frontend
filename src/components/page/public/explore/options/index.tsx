@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import {
   CustomButton,
   CustomFont,
+  GamesCustomButton,
   OptionContainer,
   OptionWrapper,
+  RecentCustomButton,
   SelectionBar,
   SelectionItem,
 } from './style';
@@ -46,6 +48,13 @@ const OptionsComponent = () => {
                 gap: '2rem',
                 w: '100%',
                 h: '100%',
+                queries: {
+                  1590: {
+                    fDirection: 'column',
+                    vAlign: 'start',
+                    gap: '1.25rem',
+                  },
+                },
               }}
             >
               <Flex
@@ -53,6 +62,12 @@ const OptionsComponent = () => {
                   flex: 1,
                   fDirection: 'column',
                   gap: '0.75rem',
+                  queries: {
+                    1590: {
+                      flex: 'none',
+                      gap: '1.25rem',
+                    },
+                  },
                 }}
               >
                 <CustomFont>Recent Form</CustomFont>
@@ -64,16 +79,26 @@ const OptionsComponent = () => {
                     <SelectionItem
                       isActive={formTabIndex === i}
                       onClick={() => setFormTabIndex(i)}
+                      key={i}
                     >
                       <P>{p}</P>
                     </SelectionItem>
                   ))}
                 </SelectionBar>
+                <RecentCustomButton>
+                  <P>Event type</P>
+                  <Icon icon="Plus" />
+                </RecentCustomButton>
               </Flex>
               <Flex
                 $style={{
                   fDirection: 'column',
                   gap: '0.75rem',
+                  queries: {
+                    768: {
+                      gap: '1.25rem',
+                    },
+                  },
                 }}
               >
                 <CustomFont>Games</CustomFont>
@@ -85,11 +110,16 @@ const OptionsComponent = () => {
                     <SelectionItem
                       isActive={gameTabIndex === i}
                       onClick={() => setGameTabIndex(i)}
+                      key={i}
                     >
                       <P>{p}</P>
                     </SelectionItem>
                   ))}
                 </SelectionBar>
+                <GamesCustomButton>
+                  <P>Event type</P>
+                  <Icon icon="Plus" />
+                </GamesCustomButton>
               </Flex>
             </Flex>
             <Flex
@@ -98,6 +128,11 @@ const OptionsComponent = () => {
                 gap: '1.25rem',
                 w: '328px',
                 h: '100%',
+                queries: {
+                  768: {
+                    fDirection: 'column',
+                  },
+                },
               }}
             >
               <Flex

@@ -7,6 +7,10 @@ export const StatsContainer = styled.div`
     width: 100%;
     max-width: 328px;
     padding: 2rem 0;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 export const Title = styled.div`

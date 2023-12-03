@@ -18,10 +18,9 @@ interface TablePropsInterface {
 
 const Table = ({ fields, data }: TablePropsInterface) => {
   const { mode } = useContext(ModeContext);
-  console.log(mode);
   return (
     <TableContainer>
-      <StyledTable $gct={fields.map(i => i.width ?? '1fr')} mode={mode}>
+      <StyledTable $gct={fields.map(i => i.width ?? '1fr')} mode={mode.toString()}>
         <React.Fragment>
           {fields.map((field, i) => (
             <StyledTh key={i} $width={field.width}>

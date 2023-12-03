@@ -21,6 +21,13 @@ const HitRates = () => {
         $style={{
           hAlign: 'space-between',
           w: '100%',
+          queries: {
+            768: {
+              fDirection: 'column',
+              gap: '1rem',
+              w: '100%',
+            },
+          },
         }}
       >
         <Flex
@@ -40,6 +47,11 @@ const HitRates = () => {
       <Flex
         $style={{
           gap: '2rem',
+          queries: {
+            768: {
+              fDirection: 'column',
+            },
+          },
         }}
       >
         <Flex
