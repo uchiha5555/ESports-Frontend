@@ -1,4 +1,5 @@
-import React from 'react';
+import { ModeContext } from '@/context';
+import React, { useContext } from 'react';
 import {
   BarChart,
   Bar,
@@ -46,6 +47,7 @@ const data = [
 ];
 
 const VerticalBarChart = () => {
+  const { mode } = useContext(ModeContext);
   const renderCustomAxisTick = (props: any) => {
     const { x, y, payload } = props;
     return (
@@ -111,13 +113,13 @@ const VerticalBarChart = () => {
         </Bar>
         <ReferenceLine
           x={1}
-          stroke="white" // Color of the reference line
+          stroke={mode ? 'white' : 'black'} // Color of the reference line
           strokeWidth={3} // Width of the reference line
           label={{
             position: 'insideBottom', // Position of the label
             value: `Okay`, // Label text
             fontSize: 18, // Font size of the label
-            fill: 'white', // Color of the label text
+            fill: mode ? 'white' : 'black', // Color of the label text
             dy: 25,
           }}
         />

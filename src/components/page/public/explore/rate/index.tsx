@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   CustomButton,
   CustomFont,
@@ -6,14 +6,15 @@ import {
   HitRatesContainer,
   Title,
   TBody,
-  Divider,
   ChartContainer,
 } from './style';
 import { Flex, P } from '@/components/basic';
 import { Icon } from '@/components/custom';
 import RateChart from '../charts/rate';
+import { ModeContext } from '@/context';
 
 const HitRates = () => {
+  const { mode } = useContext(ModeContext);
   return (
     <HitRatesContainer>
       <Flex
@@ -29,11 +30,11 @@ const HitRates = () => {
           }}
         >
           <Title>Hit Rate</Title>
-          <P>FAKER (T1)</P>
+          <P $style={{ color: mode ? 'white' : 'black' }}>FAKER (T1)</P>
         </Flex>
         <CustomButton>
           <P>Average</P>
-          <Icon icon="Plus" />
+          <Icon icon="Plus" color={mode ? '#545454' : '#ffffff'} />
         </CustomButton>
       </Flex>
       <Flex
@@ -83,7 +84,6 @@ const HitRates = () => {
       <ChartContainer>
         <RateChart />
       </ChartContainer>
-      <Divider />
     </HitRatesContainer>
   );
 };

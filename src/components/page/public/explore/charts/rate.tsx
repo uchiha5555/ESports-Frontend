@@ -1,4 +1,5 @@
-import React from 'react';
+import { ModeContext } from '@/context';
+import React, { useContext } from 'react';
 import {
   BarChart,
   Bar,
@@ -75,15 +76,16 @@ const data = [
 ];
 
 const RateChart = () => {
+  const { mode } = useContext(ModeContext);
   const CustomizedLabel = (props: any) => {
     const { x, y, height, value, index } = props;
     return (
       <>
-        <text x={x} y={30 + y} dx={53} fill="White" fontSize={18} textAnchor="end">
+        <text x={x - 9} y={30 + y} dx={53} fill="White" fontSize={18} textAnchor="end">
           {data[index].value}
         </text>
         <text
-          x={x}
+          x={x - 9}
           y={y + height - 20}
           dx={60}
           fill="white"
@@ -118,13 +120,13 @@ const RateChart = () => {
         </Bar>
         <ReferenceLine
           y={20}
-          stroke="white" // Color of the reference line
+          stroke={mode ? 'white' : 'black'} // Color of the reference line
           strokeWidth={2} // Width of the reference line
           label={{
             position: 'insideTopRight', // Position of the label
             value: `O/U 20`, // Label text
             fontSize: 20, // Font size of the label
-            fill: 'white', // Color of the label text
+            fill: mode ? 'white' : 'black', // Color of the label text
             dy: 10,
             dx: 65,
           }}

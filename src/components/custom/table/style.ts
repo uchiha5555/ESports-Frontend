@@ -1,3 +1,4 @@
+import { ModeContext } from '@/context';
 import { GV } from '@/utils/style.util';
 import styled from 'styled-components';
 
@@ -8,7 +9,8 @@ export const StyledTh = styled.div<{ $width?: string }>`
   ${({ $width }) => ($width ? `width: ${$width};` : ``)}
   padding: 1rem 0.4rem;
   font-size: ${GV('font-size-4')};
-  font-family: ${GV('font1')}
+  font-family: ${GV('font1')};
+  color: ${props => props.theme.text};
 `;
 
 export const StyledTd = styled.div<{ $align?: string; $width?: string }>`
@@ -18,6 +20,7 @@ export const StyledTd = styled.div<{ $align?: string; $width?: string }>`
   ${({ $align }) => ($align ? `align-items: ${$align};` : ``)}
   ${({ $width }) => ($width ? `width: ${$width};` : ``)}
   padding: 1rem 0.4rem;
+  color: ${props => props.theme.text};
 `;
 
 // export const StyledTr = styled.div`
@@ -28,35 +31,35 @@ export const StyledTd = styled.div<{ $align?: string; $width?: string }>`
 //   height: 4.5rem;
 // `;
 
-export const StyledTable = styled.div<{ $gct: string[] }>`
+export const StyledTable = styled.div<{ $gct: string[], mode: boolean }>`
   display: grid;
   grid-template-columns: ${({ $gct }) => $gct.join(' ')};
   grid-row-gap: 0.1rem;
   grid-column-gap: 0;
-  background: ${GV('gray')};
+  background: ${props => props.theme.table.main};
 
   > * {
     /* display: table; */
   }
 
-  ${({ $gct }) => `
+  ${({ $gct, mode }) => `
     ${$gct
       .map(
         (i, k) =>
           (k === 0 ? `` : `,`) + `\n>div:nth-child(${$gct.length * 2}n + ${k + 1})`
       )
       .join('')} {
-      background: #111111;
+      background: ${mode ? '#111111' : '#ffffff'};
     }
   `}
-  ${({ $gct }) => `
+  ${({ $gct, mode }) => `
     ${$gct
       .map(
         (i, k) =>
           (k === 0 ? `` : `,`) + `\n>div:nth-child(${$gct.length * 2}n - ${k})`
       )
       .join('')} {
-        background: #111111;
+        background: ${mode ? '#111111' : '#ffffff'};
     }
   `}
 `;

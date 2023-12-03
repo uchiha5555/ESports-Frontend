@@ -48,10 +48,13 @@ const data = [
 
 const StatsChart = () => {
   return (
-    <ResponsiveContainer>
-      <RadarChart width={250} height={250} data={data} margin={{ left: 70 }}>
+    <ResponsiveContainer width={'100%'} height={'100%'}>
+      <RadarChart data={data} margin={{ left: 70 }}>
         <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />
+        <PolarAngleAxis
+          dataKey="subject"
+          tick={{ fontSize: 14, fontFamily: 'GT Walsheim Pro' }}
+        />
         <Radar name="Mike" dataKey="A" stroke="#426CFF" fill="#426CFF" />
       </RadarChart>
     </ResponsiveContainer>

@@ -6,15 +6,18 @@ export const GameBarContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 1471px;
+  background: ${props => props.theme.palette.ghost};
+
 `;
 
 export const GameBarWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 1.6rem 2.4rem;
+  justify-content: center;
+  padding: 1.6rem 0;
   width: calc(100% + 2.4rem);
-  margin-left: -2.4rem;
-  background: ${props => props.theme.gray.ghost};
+  max-width: 1408px;
 `;
 
 export const GameBarTitle = styled.div`
@@ -35,5 +38,5 @@ export const BrandsBar = styled.div`
   display: flex;
   align-items: center;
   gap: 5rem;
-  flex: 1;
+  flex: 2;
 `;

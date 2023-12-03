@@ -1,7 +1,6 @@
-import { Flex } from '@/components/basic';
 import { StyledTable, StyledTd, StyledTh, TableContainer } from './style';
-import FilterSvg from './FilterSvg';
-import React from 'react';
+import React, { useContext } from 'react';
+import { ModeContext } from '@/context';
 
 export interface TableFieldInterface {
   key: string;
@@ -18,9 +17,11 @@ interface TablePropsInterface {
 }
 
 const Table = ({ fields, data }: TablePropsInterface) => {
+  const { mode } = useContext(ModeContext);
+  console.log(mode);
   return (
     <TableContainer>
-      <StyledTable $gct={fields.map(i => i.width ?? '1fr')}>
+      <StyledTable $gct={fields.map(i => i.width ?? '1fr')} mode={mode}>
         <React.Fragment>
           {fields.map((field, i) => (
             <StyledTh key={i} $width={field.width}>

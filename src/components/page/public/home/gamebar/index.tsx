@@ -19,8 +19,8 @@ const GameBarComponent = () => {
       <GameBarWrapper>
         <Flex
           $style={{
+            flex: '1',
             fDirection: 'column',
-            w: '550px',
           }}
         >
           <GameBarSubTitle>Currently showing stats for</GameBarSubTitle>

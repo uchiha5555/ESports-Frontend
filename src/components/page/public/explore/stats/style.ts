@@ -3,10 +3,10 @@ import { GV } from "@/utils/style.util";
 import styled from "styled-components";
 
 export const StatsContainer = styled.div`
-    background: ${props => props.theme.gray.ghost};
+    background: ${props => props.theme.palette.ghost};
     width: 100%;
     max-width: 328px;
-    padding: 2rem;
+    padding: 2rem 0;
 `;
 
 export const Title = styled.div`
@@ -14,13 +14,18 @@ export const Title = styled.div`
     font-size: ${GV('font-size-3')};
     font-weight: 900;
     text-transform: uppercase;
+    color: ${props => props.theme.text};
 `;
 
 export const ChartContainer = styled.div`
-    width: 300px;
+    width: 100%;
     height: 300px;
 `;
 
 export const CustomFont = styled(Span)`
     font-family: ${GV('font1')};
+`;
+
+export const TableContainer = styled.div`
+    padding: 0 2rem 2rem;
 `

@@ -5,9 +5,9 @@ export const HitRatesContainer = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     padding: 30px;
-    background: ${props => props.theme.gray.ghost};
+    background: ${props => props.theme.palette.ghost};
 `;
 
 export const Title = styled.div`
@@ -15,6 +15,7 @@ export const Title = styled.div`
     font-size: ${GV('font-size-3')};
     font-weight: 900;
     text-transform: uppercase;
+    color: ${props => props.theme.text};
 `;
 
 export const CustomButton = styled.div`
@@ -22,10 +23,11 @@ export const CustomButton = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    border: 1px solid ${GV('gray')};
+    border: 1px solid ${props => props.theme.palette.secondary};
     padding: 8px 20px;
     font-family: ${GV('font1')};
     font-size: ${GV('font-size')};
+    color: ${props => props.theme.bar.text};
 `;
 
 export const THeader = styled.div`
@@ -35,7 +37,7 @@ export const THeader = styled.div`
     gap: 4rem;
     padding: 9px 72px;
     width: 100%;
-    background: ${props => props.theme.gray.primary};
+    background: ${props => props.theme.table.primary};
 `;
 
 export const TBody = styled.div`
@@ -45,13 +47,14 @@ export const TBody = styled.div`
     gap: 4rem;
     padding: 9px 72px;
     width: 100%;
-    background: ${props => props.theme.gray.main};
+    background: ${props => props.theme.table.secondary};
 `;
 
 export const CustomFont = styled.div`
     font-family: ${GV('font1')};
     font-size: ${GV('font-size')};
     color: ${GV('gray-300')};
+    color: ${props => props.theme.text};
 `;
 
 export const Divider = styled.div`

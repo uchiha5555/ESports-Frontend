@@ -1,9 +1,16 @@
-import React from 'react';
-import { ChartContainer, CustomFont, StatsContainer, Title } from './style';
+import React, { useContext } from 'react';
+import {
+  ChartContainer,
+  CustomFont,
+  StatsContainer,
+  TableContainer,
+  Title,
+} from './style';
 import { Flex, P } from '@/components/basic';
 import { Icon } from '@/components/custom';
 import StatsChart from '../charts/stats';
 import Table, { TableFieldInterface } from '@/components/custom/table';
+import { ModeContext } from '@/context';
 
 const sources: any = [
   {
@@ -86,6 +93,7 @@ const fields: TableFieldInterface[] = [
 ];
 
 const Stats = () => {
+  const { mode } = useContext(ModeContext);
   return (
     <StatsContainer>
       <Flex
@@ -97,6 +105,7 @@ const Stats = () => {
           $style={{
             fDirection: 'column',
             gap: '0.25rem',
+            p: '0 2rem',
           }}
         >
           <Title>
@@ -105,12 +114,14 @@ const Stats = () => {
               <Icon icon="Help" />
             </sup>
           </Title>
-          <P>FAKER</P>
+          <P $style={{ color: mode ? 'white' : 'black' }}>FAKER</P>
         </Flex>
         <ChartContainer>
           <StatsChart />
         </ChartContainer>
-        <Table data={sources} fields={fields} />
+        <TableContainer>
+          <Table data={sources} fields={fields} />
+        </TableContainer>
       </Flex>
     </StatsContainer>
   );

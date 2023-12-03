@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Flex, P } from '@/components/basic';
 import { Icon } from '@/components/custom';
 
 import {
+  Actived,
   AvatarContainer,
   BackAvatarContainer,
   Breadcrumb,
   BreadcrumbContainer,
+  BreadcrumbWrapper,
   CustomButton,
   CustomLetter,
   FormContainer,
@@ -14,6 +16,7 @@ import {
   InfoBar,
   LinkLetter,
   PlayerLetter,
+  Unactived,
   UserInfo,
   UserInfoContainer,
   VerticalBarChartLayout,
@@ -24,22 +27,28 @@ import AvatarImage from '@/assets/img/avatar.png';
 import GameBarComponent from '@/components/page/public/home/gamebar';
 import VerticalBarChart from '@/components/page/public/home/chart';
 import ContainerComponent from '@/components/layout/container';
+import { ModeContext } from '@/context';
 
 const Hero = () => {
+  const { mode } = useContext(ModeContext);
   return (
     <HeroContainer>
+      <GameBarComponent />
+      <BreadcrumbContainer>
+        <BreadcrumbWrapper>
+          <Breadcrumb>
+            <Unactived>/ LoL Matches / LoL. Teams /</Unactived> <Actived>FAKER</Actived>
+          </Breadcrumb>
+          <PlayerLetter>PLAYER</PlayerLetter>
+        </BreadcrumbWrapper>
+      </BreadcrumbContainer>
       <ContainerComponent>
-        <GameBarComponent />
         <UserInfoContainer>
-          <BackAvatarContainer>
-            <Image src={AvatarImage} alt="" $style={{ bradius: 'none' }} />
-          </BackAvatarContainer>
-          <BreadcrumbContainer>
-            <Breadcrumb>
-              <span>/ LoL Matches / LoL. Teams /</span> FAKER
-            </Breadcrumb>
-            <PlayerLetter>PLAYER</PlayerLetter>
-          </BreadcrumbContainer>
+          {mode && (
+            <BackAvatarContainer>
+              <Image src={AvatarImage} alt="" $style={{ bradius: 'none' }} />
+            </BackAvatarContainer>
+          )}
           <UserInfo>
             <AvatarContainer>
               <Image src={AvatarImage} alt="" $style={{ bradius: 'none' }} />

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import {
   HeaderContainer,
   HeaderWrapper,
@@ -8,18 +8,15 @@ import {
 } from './style';
 import useScroll from '@/hooks/useScroll';
 import { Flex, Logo, P } from '@/components/basic';
-import { Icon, Input, RadioButton } from '@/components/custom';
+import { Icon, Input } from '@/components/custom';
 import Switch from '@/components/custom/switch';
 import ContainerComponent from '../container';
+import { ModeContext } from '@/context';
 
-interface HeaderType {
-  toggle?: boolean;
-  toggleTheme: (value: any) => void;
-}
-
-const Header: FC<HeaderType> = ({ toggle, toggleTheme }) => {
+const Header: FC = () => {
   const [, scrollY] = useScroll();
   const [search, setSearch] = useState('');
+  const { mode, toggleMode } = useContext(ModeContext);
 
   return (
     <HeaderContainer isTop={!(scrollY > 50)}>
@@ -69,11 +66,7 @@ const Header: FC<HeaderType> = ({ toggle, toggleTheme }) => {
                 />
                 <RadioContainer>
                   <P>Dark</P>
-                  <Switch
-                    id="test-switch"
-                    toggled={toggle}
-                    onChange={e => toggleTheme(!toggle)}
-                  />
+                  <Switch id="test-switch" toggled={mode} onChange={e => toggleMode()} />
                   <P>Light</P>
                 </RadioContainer>
               </Flex>
